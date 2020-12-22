@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  border: 1 px solid black;
+  grid-template-columns: 1fr 3fr;
+  app-nav-bar {
+    display:grid;
+    height: 100%;
+  }
+  .content {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1.5fr 7.5fr 1fr;
+    app-header {
+      height: 100%;
+    }
+    .pages {
+      height: 100%;
+    }
+    app-footer {
+      height: 100%;
+    }
+  }
+}
