@@ -1,0 +1,57 @@
+@import './src/assets/styles/teams.scss';
+
+.Nba-logo {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 70%;
+    height: 80%;
+  }
+}
+.Team-selector {
+  display: flex;
+  flex-direction: column;
+  #Bucks {
+    @include teams;
+    a {
+      button {
+        background-color: darkgreen;
+      }
+    }
+  }
+  #Heat {
+    @include teams;
+    a {
+      button {
+        background-color: red;
+        color:yellow;
+      }
+    }
+  }
+  #Lakers {
+    @include teams;
+    a {
+      button {
+        background-color: purple;
+        color: yellow;
+      }
+    }
+  }
+  #Mavericks {
+    @include teams;
+    a {
+      button {
+        background-color: darkblue;
+      }
+    }
+  }
+  #Raptors {
+    @include teams;
+    a {
+      button {
+        background-color: red;
+        color: black;
+      }
+    }
+  }
+}
