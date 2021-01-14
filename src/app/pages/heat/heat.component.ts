@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/shared/interfaces/player';
+import { roster } from 'src/app/shared/mock-datas/miami-heat';
 
 @Component({
   selector: 'app-heat',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heat.component.scss']
 })
 export class HeatComponent implements OnInit {
+  roster: Player[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.roster = roster;
+    console.log('heat');
+  }
 }
