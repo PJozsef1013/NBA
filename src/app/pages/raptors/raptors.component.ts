@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/shared/interfaces/player';
+import { roster } from 'src/app/shared/mock-datas/toronto-raptors';
 
 @Component({
   selector: 'app-raptors',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./raptors.component.scss']
 })
 export class RaptorsComponent implements OnInit {
+  roster: Player[] = [];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.roster = roster;
+  }
 }
