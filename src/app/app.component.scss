@@ -2,24 +2,41 @@
   display: grid;
   width: 100vw;
   height: 100vh;
-  border: 1 px solid black;
-  grid-template-columns: 1fr 3fr;
-  app-nav-bar {
-    display:grid;
-    height: 100%;
+  grid-template-columns: 1fr 3.5fr;
+  .navbar {
+    display:flex;
+    app-nav-bar {
+      display: grid;
+      grid-template-rows: 1fr 5fr;
+      height: 100%;
+    }
   }
   .content {
     display: grid;
     height: 100%;
     grid-template-rows: 1.5fr 7.5fr 1fr;
-    app-header {
-      height: 100%;
+    .header {
+      display: flex;
+      router-outlet {
+        display: grid;
+        max-height: 10px;
+        border: 1px solid red;
+        height: 100%;
+      }
     }
     .pages {
-      height: 100%;
+      display:flex;
+      router-outlet {
+        display: grid;
+        height: 100%;
+      }
     }
-    app-footer {
-      height: 100%;
+    .footer {
+      display:flex;
+      app-footer {
+        display: grid;
+        height: 100%;
+      }
     }
   }
 }
