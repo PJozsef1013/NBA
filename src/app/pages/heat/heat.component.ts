@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 import { Player } from 'src/app/shared/interfaces/player';
-import { roster } from 'src/app/shared/mock-datas/miami-heat';
+import { Team } from 'src/app/shared/interfaces/team';
 
 @Component({
   selector: 'app-heat',
@@ -9,10 +10,13 @@ import { roster } from 'src/app/shared/mock-datas/miami-heat';
 })
 export class HeatComponent implements OnInit {
   roster: Player[] = [];
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.roster = roster;
-    console.log('heat');
+    this.apiService.getTeam('1').subscribe(
+      (team: Team) => (this.roster = team.roster),
+      (error) => {},
+      () => {}
+    );
   }
 }

@@ -1,6 +1,6 @@
 import { Player } from '../interfaces/player';
 
-export const roster: Player[] = [
+export const heat: Player[] = [
   {
     id: '1',
     playerDatas: {
