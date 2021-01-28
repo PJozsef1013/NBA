@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Team } from './shared/interfaces/team';
+import { Team } from '../interfaces/team';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   backendUrl = 'http://localhost:3000';
+
   constructor(private http: HttpClient) {}
 
   getTeam(teamId: string): Observable<Team> {
