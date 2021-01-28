@@ -1,0 +1,8 @@
+:host {
+  width: 100%;
+}
+
+:host ::ng-deep .raptors-container .player:hover {
+  color: rgb(186, 12, 47);
+  background-color: rgb(6, 25, 34) !important;
+}

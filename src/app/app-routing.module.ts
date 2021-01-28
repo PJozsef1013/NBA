@@ -18,13 +18,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'lakers',
-    loadChildren: () => import('./pages/lakers/lakers.module').then((m) => m.LakersModule),
+    path: 'bulls',
+    loadChildren: () => import('./pages/bulls/bulls.module').then((m) => m.BullsModule),
     pathMatch: 'full'
   },
   {
-    path: 'mavericks',
-    loadChildren: () => import('./pages/mavericks/mavericks.module').then((m) => m.MavericksModule),
+    path: 'celtics',
+    loadChildren: () => import('./pages/celtics/celtics.module').then((m) => m.CelticsModule),
     pathMatch: 'full'
   },
   {

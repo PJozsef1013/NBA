@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faBasketballBall } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +7,9 @@ import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  faCaretRight = faCaretRight;
+  readonly faBasketball = faBasketballBall;
+
+  navBarIsOpen = true;
 
   constructor() {}
 

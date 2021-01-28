@@ -1,1 +1,4 @@
-<p>bucks works!</p>
+<div class="bucks-container">
+  <app-card-component *ngIf="roster" (playerFiltered)="filterPlayerByName($event)" (filterReseted)="resetFilter()" [roster]="roster">
+  </app-card-component>
+</div>

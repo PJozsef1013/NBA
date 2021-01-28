@@ -2,41 +2,40 @@
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1fr 3.5fr;
+  grid-template-columns: auto 5fr;
+  grid-template-rows: auto 5fr auto;
+  grid-template-areas: 
+  "navbar header"
+  "navbar content"
+  "navbar footer";
   .navbar {
-    display:flex;
-    app-nav-bar {
-      display: grid;
-      grid-template-rows: 1fr 5fr;
-      height: 100%;
+    // display: flex;
+    grid-area:navbar;
+  }
+  .header {
+    display: flex;
+    grid-area: header;
+    height: 125px;
+    max-height: 125px;
+    app-header{
+      width:100%;
     }
   }
   .content {
-    display: grid;
+    display: flex;
     height: 100%;
-    grid-template-rows: 1.5fr 7.5fr 1fr;
-    .header {
-      display: flex;
-      router-outlet {
-        display: grid;
-        max-height: 10px;
-        border: 1px solid red;
-        height: 100%;
-      }
-    }
+    grid-area: content;
+    overflow-y: scroll;
+    background-color:rgb(207, 207, 207);
     .pages {
-      display:flex;
-      router-outlet {
-        display: grid;
-        height: 100%;
-      }
+      width:100%;
     }
-    .footer {
-      display:flex;
-      app-footer {
-        display: grid;
-        height: 100%;
-      }
-    }
+  }
+}
+.footer {
+  display: flex;
+  grid-area: footer;
+  app-footer {
+    width:100%;
   }
 }

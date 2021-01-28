@@ -1,0 +1,97 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="text" [(ngModel)]="value" (ngModelChange)="onChange()" />
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetFilter()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<div class="container">
+  <div class="player" *ngFor="let player of roster">
+    <div class="player-info">
+      <div class="img">
+        <img src="{{ player.imageUrl }}" />
+      </div>
+      <div class="player-detail">
+        <span>#{{ player.playerDatas.yerseyNumber }} {{ player.playerDatas.playerName }} [{{ player.playerDatas.position }}]</span>
+      </div>
+    </div>
+    <div class="tables">
+      <div class="table-datas">
+        <table>
+          <thead>
+            <tr>
+              <th>Age</th>
+              <th>Height</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ player.playerDatas.age }}</td>
+              <td>{{ player.playerDatas.height }}</td>
+              <td>{{ player.playerDatas.weight }}lbs</td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+      <div class="table-stats">
+        <table>
+          <thead>
+            <tr>
+              <th id="title" colspan="6">Stats (Per Game)</th>
+            </tr>
+            <tr>
+              <th>Season</th>
+              <th>Points</th>
+              <th>Rebounds</th>
+              <th>Assists</th>
+              <th>Steals</th>
+              <th>Blocks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>2018/2019</th>
+              <td>
+                {{ player.playerStats[20182019].pointsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20182019].reboundsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20182019].assistsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20182019].stealsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20182019].blocksPerGame }}
+              </td>
+            </tr>
+            <tr>
+              <th>2019/2020</th>
+              <td>
+                {{ player.playerStats[20192020].pointsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20192020].reboundsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20192020].assistsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20192020].stealsPerGame }}
+              </td>
+              <td>
+                {{ player.playerStats[20192020].blocksPerGame }}
+              </td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

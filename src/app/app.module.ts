@@ -7,10 +7,11 @@ import { NavBarModule } from './shared/components/nav-bar/nav-bar.module';
 import { HeaderModule } from './shared/components/header/header.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NavBarModule, HeaderModule, FooterModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NavBarModule, HeaderModule, FooterModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

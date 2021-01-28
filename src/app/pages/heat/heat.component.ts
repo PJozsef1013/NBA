@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { Player } from 'src/app/shared/interfaces/player';
 import { Team } from 'src/app/shared/interfaces/team';
 

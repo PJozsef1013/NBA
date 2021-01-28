@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+}
+
+:host ::ng-deep .bulls-container img {
+  height: 70%;
+  width: 65% !important;
+}
+
+:host ::ng-deep .bulls-container .player:hover {
+  color: white;
+  background-color: rgb(206, 17, 65) !important;
+}

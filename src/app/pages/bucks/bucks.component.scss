@@ -1,0 +1,12 @@
+:host {
+  width: 100%;
+}
+
+:host ::ng-deep .bucks-container .player:hover {
+  color: rgb(240, 235, 210);
+  background-color: rgb(0, 71, 27) !important;
+}
+
+mat-label {
+  font-size: 50px;
+}

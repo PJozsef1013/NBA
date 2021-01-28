@@ -1,22 +1,35 @@
 @mixin teams() {
-    display:flex;
-fa-icon{
-    font-size:26px;
+  display: flex;
+  flex-direction: column;
+  .team-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding:5px;
+    padding: 10px;
+    height: 60px;
+    fa-icon {
+      display: flex;
+      font-size: 32px;
+      align-items: center;
+      padding: 5px;
+      color: rgb(207, 83, 0);
     }
-  a {
-    font-style: italic;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding:5px;
-    button {
-    font-size: 20px;
-      border-radius: 20px;
-      color: white;
-      
+    a {
+      font-style: italic;
+      padding: 5px;
+      button {
+        width: 298px;
+        align-items: center;
+        font-size: 26px;
+        border-radius: 20px;
+        background-color: rgb(23, 64, 139);
+        color: white;
+        border: 1px solid white;
+      }
+      button:hover {
+        background-color: white;
+        color: rgb(23, 64, 139);
+      }
     }
-    button:hover {
-        background-color:orange;
   }
-}
 }

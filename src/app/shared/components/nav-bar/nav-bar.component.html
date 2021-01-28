@@ -1,25 +1,62 @@
-<div class="Nba-logo">
-  <img src="./assets/pictures/Nba-logo.png" />
-</div>
-<div class="Team-selector">
-  <div id="Bucks">
-    <fa-icon [icon]="faCaretRight"></fa-icon>
-    <a routerLink="/bucks"><button>Milwaukee Bucks</button></a>
+<div class="navbar-container" [ngClass]="{ close: !navBarIsOpen }">
+  <div class="Nba-logo">
+    <img *ngIf="navBarIsOpen" (click)="navBarIsOpen = !navBarIsOpen" src="https://cdn.nba.com/logos/leagues/logo-nba.svg" />
+    <img
+      *ngIf="!navBarIsOpen"
+      (click)="navBarIsOpen = !navBarIsOpen"
+      src="https://ak-static.cms.nba.com/wp-content/themes/nba-official/img/logoman.svg"
+    />
   </div>
-  <div id="Heat">
-    <fa-icon [icon]="faCaretRight"></fa-icon>
-    <a routerLink="/heat"><button>Miami Heat</button></a>
-  </div>
-  <div id="Lakers">
-    <fa-icon [icon]="faCaretRight"></fa-icon>
-    <a routerLink="/lakers"><button>Los Angeles Lakers</button></a>
-  </div>
-  <div id="Mavericks">
-    <fa-icon [icon]="faCaretRight"></fa-icon>
-    <a routerLink="/mavericks"><button>Dallas Mavericks</button></a>
-  </div>
-  <div id="Raptors">
-    <fa-icon [icon]="faCaretRight"></fa-icon>
-    <a routerLink="/raptors"><button>Toronto Raptors</button></a>
+  <div class="Team-selector">
+    <div id="Celtics">
+      <div class="team-container" *ngIf="navBarIsOpen">
+        <fa-icon [icon]="faBasketball"></fa-icon>
+        <a routerLink="/celtics"><button>Boston Celtics</button></a>
+        <fa-icon [icon]="faBasketball"></fa-icon>
+      </div>
+      <div class="team-container" *ngIf="!navBarIsOpen">
+        <img src="https://cdn.nba.com/logos/nba/1610612738/global/L/logo.svg" />
+      </div>
+    </div>
+    <div id="Bulls">
+      <div class="team-container" *ngIf="navBarIsOpen">
+        <fa-icon [icon]="faBasketball"></fa-icon>
+        <a routerLink="/bulls"><button>Chicago Bulls</button></a>
+        <fa-icon [icon]="faBasketball"></fa-icon>
+      </div>
+      <div class="team-container" *ngIf="!navBarIsOpen">
+        <img src="https://cdn.nba.com/logos/nba/1610612741/global/L/logo.svg" />
+      </div>
+    </div>
+    <div id="Bucks">
+      <div class="team-container" *ngIf="navBarIsOpen">
+        <fa-icon [icon]="faBasketball"></fa-icon>
+        <a routerLink="/bucks"><button>Milwaukee Bucks</button></a>
+        <fa-icon [icon]="faBasketball"></fa-icon>
+      </div>
+      <div class="team-container" *ngIf="!navBarIsOpen">
+        <img src="https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg" />
+      </div>
+    </div>
+    <div id="Heat">
+      <div class="team-container" *ngIf="navBarIsOpen">
+        <fa-icon [icon]="faBasketball"></fa-icon>
+        <a routerLink="/heat"><button>Miami Heat</button></a>
+        <fa-icon [icon]="faBasketball"></fa-icon>
+      </div>
+      <div class="team-container" *ngIf="!navBarIsOpen">
+        <img src="https://cdn.nba.com/logos/nba/1610612748/global/L/logo.svg" />
+      </div>
+    </div>
+    <div id="Raptors">
+      <div class="team-container" *ngIf="navBarIsOpen">
+        <fa-icon [icon]="faBasketball"></fa-icon>
+        <a routerLink="/raptors"><button>Toronto Raptors</button></a>
+        <fa-icon [icon]="faBasketball"></fa-icon>
+      </div>
+      <div class="team-container" *ngIf="!navBarIsOpen">
+        <img src="https://cdn.nba.com/logos/nba/1610612761/global/L/logo.svg" />
+      </div>
+    </div>
   </div>
 </div>
