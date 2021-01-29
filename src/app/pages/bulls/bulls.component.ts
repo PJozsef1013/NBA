@@ -14,6 +14,21 @@ export class BullsComponent implements OnInit {
   constructor(private apiservice: ApiService) {}
 
   ngOnInit(): void {
+    this.getTeam();
+  }
+
+  filteredByPlayerName(name: string) {
+    const roster = this.roster.filter((player: Player) => player.playerDatas.playerName === name);
+    if (roster.length > 0) {
+      this.roster = roster;
+    }
+  }
+
+  resetFilter() {
+    this.getTeam();
+  }
+
+  private getTeam() {
     this.apiservice.getTeam('3').subscribe(
       (team: Team) => (this.roster = team.roster),
       (error) => {},

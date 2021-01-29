@@ -13,6 +13,20 @@ export class HeatComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
+    this.getTeam();
+  }
+
+  filterByPlayerName(name: string) {
+    const roster = this.roster.filter((player: Player) => player.playerDatas.playerName === name);
+    if (roster.length > 0) {
+      this.roster = roster;
+    }
+  }
+  resetFilter() {
+    this.getTeam();
+  }
+
+  private getTeam() {
     this.apiService.getTeam('1').subscribe(
       (team: Team) => (this.roster = team.roster),
       (error) => {},
