@@ -1,0 +1,96 @@
+<div class="modal-container">
+  <h1 mat-dialog-title>Add Player</h1>
+  <div class="player-info" *ngIf="data">
+    <mat-form-field>
+      <mat-label>Player Id</mat-label>
+      <input matInput [(ngModel)]="data.id" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput [(ngModel)]="data.imageUrl" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Player Name</mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.playerName" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Position</mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.position" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Yersey Number </mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.yerseyNumber" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Age</mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.age" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Height</mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.height" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+    <mat-form-field *ngIf="data.playerDatas">
+      <mat-label>Weight</mat-label>
+      <input matInput [(ngModel)]="data.playerDatas.weight" (ngModelChange)="inputChanged()" />
+    </mat-form-field>
+  </div>
+  <div class="stats">
+    <div class="year" *ngIf="data.playerStats">
+      <span>2018/2019</span>
+      <mat-form-field>
+        <mat-label> Points Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendNineTeen.pointsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Rebounds Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendNineTeen.reboundsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Assists Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendNineTeen.assistsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Steals Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendNineTeen.stealsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Blocks Per Game</mat-label>
+        <input
+          matInput
+          [(ngModel)]="data.playerStats.twoThousendNineTeen.blocksPerGame"
+          (ngModelChange)="inputChanged()"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div class="year" *ngIf="data.playerStats">
+      <span>2019/2020</span>
+      <mat-form-field>
+        <mat-label> Points Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendTwenty.pointsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Rebounds Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendTwenty.reboundsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Assists Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendTwenty.assistsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Steals Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendTwenty.stealsPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label> Blocks Per Game</mat-label>
+        <input matInput [(ngModel)]="data.playerStats.twoThousendTwenty.blocksPerGame" (ngModelChange)="inputChanged()" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <span [matTooltip]="toolTip" [matTooltipClass]="'tooltip-inner'">
+      <button mat-button [disabled]="disabled" color="primary" (click)="saveNewPlayer()">Save</button>
+    </span>
+    <button mat-button color="primary" (click)="cancel()">Cancel</button>
+  </div>
+</div>

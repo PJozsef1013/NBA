@@ -1,4 +1,12 @@
 <div class="bucks-container">
-  <app-card-component *ngIf="roster" (playerFiltered)="filterPlayerByName($event)" (filterReseted)="resetFilter()" [roster]="roster">
-  </app-card-component>
+  <app-card-component
+    *ngIf="roster"
+    [roster]="roster"
+    [teamId]="'2'"
+    (playerFiltered)="filterPlayerByName($event)"
+    (filterReseted)="resetFilter()"
+    (playerAdded)="addPlayer()"
+    (playerEdited)="editPlayer()"
+    (playerDeleted)="deletePlayer()"
+  ></app-card-component>
 </div>

@@ -1,0 +1,11 @@
+<div class="delete-modal-text-and-button">
+  <div class="text" *ngIf="data.playerDatas">
+    <span>
+      Are sure want to delete <b>{{ data.playerDatas.playerName }}</b> from the roster?
+    </span>
+  </div>
+  <div class="buttons">
+    <button mat-button color="primary" (click)="deletePlayer()">Yes</button>
+    <button mat-button color="primary" (click)="close()">No</button>
+  </div>
+</div>

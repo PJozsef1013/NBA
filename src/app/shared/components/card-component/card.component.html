@@ -1,19 +1,27 @@
-<mat-form-field class="example-form-field">
-  <mat-label>Clearable input</mat-label>
-  <input matInput type="text" [(ngModel)]="value" (ngModelChange)="onChange()" />
-  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetFilter()">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-
 <div class="container">
-  <div class="player" *ngFor="let player of roster">
+  <div class="filter-and-add-icon">
+    <mat-form-field class="example-form-field">
+      <mat-label>Search by name</mat-label>
+      <input matInput type="text" [(ngModel)]="value" (ngModelChange)="onChange()" autocomplete="off" />
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetFilter()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <fa-icon
+      [matTooltip]="textToAdd"
+      [matTooltipClass]="'tooltip-inner'"
+      matTooltipPosition="above"
+      [icon]="faPlus"
+      (click)="openModal()"
+    ></fa-icon>
+  </div>
+  <div class="player" *ngFor="let player of roster; let idx = index">
     <div class="player-info">
       <div class="img">
         <img src="{{ player.imageUrl }}" />
       </div>
       <div class="player-detail">
-        <span>#{{ player.playerDatas.yerseyNumber }} {{ player.playerDatas.playerName }} {{ player.playerDatas.position }}</span>
+        <span>#{{ player.playerDatas.yerseyNumber }} {{ player?.playerDatas?.playerName }} {{ player.playerDatas.position }}</span>
       </div>
     </div>
     <div class="tables">
@@ -55,42 +63,62 @@
             <tr>
               <th>2018/2019</th>
               <td>
-                {{ player.playerStats[20182019].pointsPerGame }}
+                {{ player.playerStats.twoThousendNineTeen.pointsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20182019].reboundsPerGame }}
+                {{ player.playerStats.twoThousendNineTeen.reboundsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20182019].assistsPerGame }}
+                {{ player.playerStats.twoThousendNineTeen.assistsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20182019].stealsPerGame }}
+                {{ player.playerStats.twoThousendNineTeen.stealsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20182019].blocksPerGame }}
+                {{ player.playerStats.twoThousendNineTeen.blocksPerGame }}
               </td>
             </tr>
             <tr>
               <th>2019/2020</th>
               <td>
-                {{ player.playerStats[20192020].pointsPerGame }}
+                {{ player.playerStats.twoThousendTwenty.pointsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20192020].reboundsPerGame }}
+                {{ player.playerStats.twoThousendTwenty.reboundsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20192020].assistsPerGame }}
+                {{ player.playerStats.twoThousendTwenty.assistsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20192020].stealsPerGame }}
+                {{ player.playerStats.twoThousendTwenty.stealsPerGame }}
               </td>
               <td>
-                {{ player.playerStats[20192020].blocksPerGame }}
+                {{ player.playerStats.twoThousendTwenty.blocksPerGame }}
               </td>
             </tr>
           </tbody>
           <tfoot></tfoot>
         </table>
+      </div>
+    </div>
+    <div class="edit-delete">
+      <div class="edit-player">
+        <fa-icon
+          [matTooltip]="textToEdit"
+          [matTooltipClass]="'tooltip-inner'"
+          matTooltipPosition="above"
+          [icon]="faEdit"
+          (click)="openEditModal(idx)"
+        ></fa-icon>
+      </div>
+      <div class="delete-player">
+        <fa-icon
+          [icon]="faTrashAlt"
+          [matTooltipClass]="'tooltip-inner'"
+          matTooltipPosition="above"
+          [matTooltip]="textToDelete"
+          (click)="openDeleteModal(idx)"
+        ></fa-icon>
       </div>
     </div>
   </div>

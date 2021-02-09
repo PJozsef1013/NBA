@@ -28,6 +28,18 @@ export class BullsComponent implements OnInit {
     this.getTeam();
   }
 
+  addPlayer() {
+    this.getTeam();
+  }
+
+  editPlayer() {
+    this.getTeam();
+  }
+
+  deletePlayer() {
+    this.getTeam();
+  }
+
   private getTeam() {
     this.apiservice.getTeam('3').subscribe(
       (team: Team) => (this.roster = team.roster),

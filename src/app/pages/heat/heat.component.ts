@@ -26,6 +26,18 @@ export class HeatComponent implements OnInit {
     this.getTeam();
   }
 
+  addPlayer() {
+    this.getTeam();
+  }
+
+  editPlayer() {
+    this.getTeam();
+  }
+
+  deletePlayer() {
+    this.getTeam();
+  }
+
   private getTeam() {
     this.apiService.getTeam('1').subscribe(
       (team: Team) => (this.roster = team.roster),

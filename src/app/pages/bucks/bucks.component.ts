@@ -16,6 +16,7 @@ export class BucksComponent implements OnInit {
   ngOnInit(): void {
     this.getTeam();
   }
+
   filterPlayerByName(name: string) {
     const roster = this.roster.filter((player: Player) => player.playerDatas.playerName === name);
     if (roster.length > 0) {
@@ -24,6 +25,18 @@ export class BucksComponent implements OnInit {
   }
 
   resetFilter() {
+    this.getTeam();
+  }
+
+  addPlayer() {
+    this.getTeam();
+  }
+
+  editPlayer() {
+    this.getTeam();
+  }
+
+  deletePlayer() {
     this.getTeam();
   }
 

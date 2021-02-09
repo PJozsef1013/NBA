@@ -1,8 +1,12 @@
 <div class="raptors-container">
   <app-card-component
     *ngIf="roster"
+    [roster]="roster"
+    [teamId]="'4'"
     (playerFiltered)="filteredByPlayerName($event)"
     (filterReseted)="resetFilter()"
-    [roster]="roster"
+    (playerAdded)="addPlayer()"
+    (playerEdited)="editPlayer()"
+    (playerDeleted)="deletePlayer()"
   ></app-card-component>
 </div>

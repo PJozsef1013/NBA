@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { Player } from 'src/app/shared/interfaces/player';
 import { Team } from 'src/app/shared/interfaces/team';
@@ -11,7 +11,7 @@ import { Team } from 'src/app/shared/interfaces/team';
 export class CelticsComponent implements OnInit {
   roster: Player[] = [];
 
-  constructor(private apiservice: ApiService) {}
+  constructor(private chref: ChangeDetectorRef, private apiservice: ApiService) {}
 
   ngOnInit(): void {
     this.getTeam();
@@ -25,6 +25,18 @@ export class CelticsComponent implements OnInit {
   }
 
   resetFilter() {
+    this.getTeam();
+  }
+
+  addPlayer() {
+    this.getTeam();
+  }
+
+  editPlayer() {
+    this.getTeam();
+  }
+
+  deletePlayer() {
     this.getTeam();
   }
 

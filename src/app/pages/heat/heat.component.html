@@ -1,8 +1,12 @@
 <div class="heat-container">
   <app-card-component
     *ngIf="roster"
+    [roster]="roster"
+    [teamId]="'1'"
     (playerFiltered)="filterByPlayerName($event)"
     (filterReseted)="resetFilter()"
-    [roster]="roster"
+    (playerAdded)="addPlayer()"
+    (playerEdited)="editPlayer()"
+    (playerDeleted)="deletePlayer()"
   ></app-card-component>
 </div>

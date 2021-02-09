@@ -1,8 +1,12 @@
 <div class="celtics-container">
   <app-card-component
     *ngIf="roster"
+    [roster]="roster"
+    [teamId]="'5'"
     (playerFiltered)="filteredByName($event)"
     (filterReseted)="resetFilter()"
-    [roster]="roster"
+    (playerAdded)="addPlayer()"
+    (playerEdited)="editPlayer()"
+    (playerDeleted)="deletePlayer()"
   ></app-card-component>
 </div>
