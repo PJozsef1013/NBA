@@ -9,9 +9,20 @@ import { faBasketballBall } from '@fortawesome/free-solid-svg-icons';
 export class NavBarComponent implements OnInit {
   readonly faBasketball = faBasketballBall;
 
-  navBarIsOpen = true;
+  navBarIsOpen: boolean;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  changeNavbarState() {
+    this.navBarIsOpen = !this.navBarIsOpen;
+    localStorage.setItem('navbarisopen', `${this.navBarIsOpen}`);
+  }
+  ngOnInit(): void {
+    const isOpen = localStorage.getItem('navbarisopen');
+    if (isOpen === 'true') {
+      this.navBarIsOpen = true;
+    } else {
+      this.navBarIsOpen = false;
+    }
+  }
 }

@@ -1,9 +1,9 @@
 <div class="navbar-container" [ngClass]="{ close: !navBarIsOpen }">
   <div class="Nba-logo">
-    <img *ngIf="navBarIsOpen" (click)="navBarIsOpen = !navBarIsOpen" src="https://cdn.nba.com/logos/leagues/logo-nba.svg" />
+    <img *ngIf="navBarIsOpen" (click)="changeNavbarState()" src="https://cdn.nba.com/logos/leagues/logo-nba.svg" />
     <img
       *ngIf="!navBarIsOpen"
-      (click)="navBarIsOpen = !navBarIsOpen"
+      (click)="changeNavbarState()"
       src="https://ak-static.cms.nba.com/wp-content/themes/nba-official/img/logoman.svg"
     />
   </div>
