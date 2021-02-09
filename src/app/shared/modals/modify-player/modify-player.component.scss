@@ -1,0 +1,35 @@
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .player-info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      .year {
+          ::ng-deep .mat-form-field-label-wrapper{
+              text-align: center;
+          }   
+          ::ng-deep .mat-form-field-infix{
+            text-align: center;
+        }   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        span {
+          text-align: center;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }

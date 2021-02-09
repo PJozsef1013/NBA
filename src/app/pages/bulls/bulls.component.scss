@@ -5,6 +5,7 @@
 :host ::ng-deep .bulls-container img {
   height: 70%;
   width: 65% !important;
+  max-height: 230px;
 }
 
 :host ::ng-deep .bulls-container .player:hover {

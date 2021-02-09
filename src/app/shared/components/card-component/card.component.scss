@@ -4,5 +4,20 @@
   display: flex;
   flex-direction: column;
   height:100%;
+ .filter-and-add-icon{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   .example-form-field{
+    margin-left: 30px;
+    text-align: center;
+   }
+   fa-icon{
+    align-self: center;
+    font-size: 28px;
+    margin-right: 30px;
+    cursor: pointer;
+   }
+  }
   @include playercard;
 }
